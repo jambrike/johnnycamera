@@ -7,7 +7,7 @@ I decided this in 10 seconds doing a look around my room i trained it against 16
 Seems to work for me but it also cant really tell the black polo from the black t-shirt but oh well.
 
 Made this for Hackclub Lookalike a 48hr YSWS (made by a fellow patcher?!)
-Heres the link to the website:
+Heres the link to the website: [tshirtorpolo.pages.dev](https://tshirtorpolo.pages.dev)
 Heres the link to the Demo Vid:
 
 To run on ur own for some reason hackclub likes u to have this:
