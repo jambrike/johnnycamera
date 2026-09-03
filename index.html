@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Is it a Polo or T-Shirt</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+        <style>
+            body{
+                background:
+                radial-gradient(900px 500px at 10% 0%, rgba(255,255,255,0.05), transparent 60%),
+                #573b3b;
+                margin: 0;
+                font-family: "Inter", sans-serif;
+                background-color: #573b3b;
+            }
+            .header{
+                text-align: center;
+                padding: 20px;
+                color: white;
+                background: #684343;
+            }
+            .header h1{
+                margin: 0;
+                font-size: 36px;
+                color: white;
+            }
+            .subt{
+                margin: 6px 0 0 0;
+                opacity: 0.8;
+                font-size: 15px;
+            }
+            .tools{
+                max-width:900px;
+                margin:40px auto;
+                padding:20px;
+            }
+            .tools h2{
+                margin-bottom: 20px;
+                color:#ffffff;
+                font-size: 26px;
+            }
+            .panel{
+                background: rgba(255,255,255,0.04);
+                border: 1px solid rgba(255,255,255,0.08);
+                border-radius: 12px;
+                padding: 22px;
+                box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+            }
+            .webcam{
+                text-align: center;
+                margin-top: 20px;
+            }
+            #webcam-container canvas{
+                border-radius: 8px;
+                border: 3px solid rgba(255,255,255,0.15);
+            }
+            .shirt-slider{
+                width: 350px;
+                margin: 14px auto 0 auto;
+                color: white;
+            }
+            .slider-bar{
+                width: 100%;
+                height: 10px;
+                background: white;
+                border-radius: 10px;
+                position: relative;
+            }
+            .slider-marker{
+                width: 18px;
+                height: 18px;
+                background: #573b3b;
+                border: 2px solid white;
+                border-radius: 50%;
+                position: absolute;
+                top: -4px;
+                left: 0%;
+                transform: translateX(-50%);
+                transition: left .2s;
+            }
+            .slider-words{
+                display: flex;
+                justify-content: space-between;
+                margin-top: 7px;
+                font-size: 14px;
+            }
+            button{
+                background: #806868;
+                border: 1px solid rgba(255,255,255,0.08);
+                border-radius: 8px;
+                padding: 14px 16px;
+                font-size: 17px;
+                color: #ffffff;
+                cursor: pointer;
+                transition: .2s;
+                box-shadow: none;
+            }
+            button:hover{
+                box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+                transform: translateY(-1px);
+            }
+            .overview{
+                max-width: 900px;
+                margin: 40px auto;
+                padding: 20px;
+                color:white;
+                line-height: 1.6;
+            }
+            .overview h2{
+                font-size: 24px;
+                margin-bottom: 10px;
+                color: white;
+            }
+            .overview a{
+                color: #d8b59a;
+            }
+            .gap{
+                height: 1px;
+            }
+            #status{
+                color: white;
+                opacity: 0.8;
+            }
+            .tools, .overview{
+                max-width: 900px;
+                margin: 34px auto;
+                padding: 0 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Polo or T-Shirt?</h1>
+            <p class="subt">An ai vision model trained using Teachable Machine.</p>
+        </div>
+
+        <div class="tools">
+            <div class="panel">
+                <h2>Click Start and I'll Decide if ur wearing a Polo or T-Shirt!?!</h2>
+
+                
+
+                <div class="gap"></div>
+
+                <button type="button" id="start-button" onclick="init()">Start Camera</button>
+
+                <p id="status"></p>
+
+                <div class="webcam">
+                    <div id="webcam-container"></div>
+
+                    <div class="shirt-slider">
+                        <div class="slider-bar">
+                            <div class="slider-marker" id="slider-marker"></div>
+                        </div>
+
+                        <div class="slider-words">
+                            <span>Polo shirt</span>
+                            <span>T-shirt</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="overview">
+            <div class="panel">
+                <h2>About the Project</h2>
+
+                <p>
+                    an ai vision model for tensor flow trained using a simple 2+ class machine learning creator called <a href="https://teachablemachine.withgoogle.com/">teachable machine</a>
+                </p>
+
+                <div class="gap"></div>
+
+                <p>
+                    The Goal of this project i decided is "is it a t-shirt or a polo"
+                    I decided this in 10 seconds doing a look around my room i trained it against 160ish photos of each and 4 different type of polos and t-shirts.
+                    Seems to work for me but it also cant really tell the black polo from the black t-shirt but oh well.
+                </p>
+
+                <div class="gap"></div>
+
+                <p>
+                    Made this for Hackclub Lookalike a 48hr YSWS (made by a fellow patcher?!)
+                </p>
+
+                <br>
+
+                <p>
+                    Heres the link to the website: <a href="https://example.com">example.com</a>
+                </p>
+
+                <p>
+                    Heres the link to the Demo Vid: <a href="https://example.com">example.com</a>
+                </p>
+            </div>
+        </div>
+
+        <audio id="polo-sound" src="polo.mp3"></audio>
+        <audio id="tshirt-sound" src="tshirt.mp3"></audio>
+
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+
+        <script type="text/javascript">
+            const URL = "./tm-my-image-model/";
+
+            let model, webcam;
+            let poloStartTime = null;
+            let tshirtStartTime = null;
+            let poloPlayed = false;
+            let tshirtPlayed = false;
+
+            async function init() {
+                const button = document.getElementById("start-button");
+                const status = document.getElementById("status");
+
+                button.disabled = true;
+                status.innerHTML = "Loading model and camera...";
+
+                try {
+                    const modelURL = URL + "model.json";
+                    const metadataURL = URL + "metadata.json";
+
+                    model = await tmImage.load(modelURL, metadataURL);
+                    const flip = true;
+                    webcam = new tmImage.Webcam(350, 350, flip);
+                    await webcam.setup();
+                    await webcam.play();
+                    window.requestAnimationFrame(loop);
+
+                    document.getElementById("webcam-container").appendChild(webcam.canvas);
+
+                    status.innerHTML = "Camera is on!";
+                }
+                catch (error) {
+                    status.innerHTML = "Could not start. Make sure you allowed camera access.";
+                    button.disabled = false;
+                    console.error(error);
+                }
+            }
+
+            async function loop() {
+                webcam.update();
+                await predict();
+                window.requestAnimationFrame(loop);
+            }
+
+            async function predict() {
+                const prediction = await model.predict(webcam.canvas);
+                const poloPrediction = prediction.find(item => item.className === "polo shirt");
+                const marker = document.getElementById("slider-marker");
+                const now = Date.now();
+
+                if (poloPrediction) {
+                    const tShirtAmount = 100 - (poloPrediction.probability * 100);
+                    marker.style.left = tShirtAmount + "%";
+
+                    if (poloPrediction.probability >= 0.94) {
+                        tshirtStartTime = null;
+                        tshirtPlayed = false;
+
+                        if (poloStartTime === null) {
+                            poloStartTime = now;
+                        }
+
+                        if (now - poloStartTime >= 2000 && poloPlayed === false) {
+                            document.getElementById("polo-sound").play();
+                            poloPlayed = true;
+                        }
+                    }
+                    else if (tShirtAmount >= 94) {
+                        poloStartTime = null;
+                        poloPlayed = false;
+
+                        if (tshirtStartTime === null) {
+                            tshirtStartTime = now;
+                        }
+
+                        if (now - tshirtStartTime >= 2000 && tshirtPlayed === false) {
+                            document.getElementById("tshirt-sound").play();
+                            tshirtPlayed = true;
+                        }
+                    }
+                    else {
+                        poloStartTime = null;
+                        tshirtStartTime = null;
+                        poloPlayed = false;
+                        tshirtPlayed = false;
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
