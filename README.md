@@ -8,7 +8,7 @@ Seems to work for me but it also cant really tell the black polo from the black 
 
 Made this for Hackclub Lookalike a 48hr YSWS (made by a fellow patcher?!)
 Heres the link to the website: [tshirtorpolo.pages.dev](https://tshirtorpolo.pages.dev)
-Heres the link to the Demo Vid:
+Heres the link to the Demo Vid: [youtu.be/tfftP9ddG-Q](https://youtu.be/tfftP9ddG-Q)
 
 To run on ur own for some reason hackclub likes u to have this:
 Fork repository from github
